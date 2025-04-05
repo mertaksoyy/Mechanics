@@ -1,0 +1,18 @@
+﻿<Properties StartupConfiguration="{B873996F-0E4A-0BA5-E884-C40FB1CD61AE}|">
+  <MonoDevelop.Ide.Workspace />
+  <MonoDevelop.Ide.Workbench>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Assembly-CSharp" expanded="True" selected="True" />
+          <Node name="Pickupitemmechanic" expanded="True" />
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
