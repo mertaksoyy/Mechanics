@@ -66,8 +66,6 @@ public class InventorySystem : MonoBehaviour
             inventoryScreenUI.SetActive(true);
             Cursor.lockState = CursorLockMode.None;
             isOpen = true;
-            
- 
         }
         else if (Input.GetKeyDown(KeyCode.Tab) && isOpen)
         {
