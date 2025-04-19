@@ -19,6 +19,8 @@ public class EquipSystem : MonoBehaviour
    public int selectedNumber = -1;
    public GameObject selectedItem;
 
+   public GameObject toolHolder;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -73,7 +75,7 @@ public class EquipSystem : MonoBehaviour
     }
 
 
-   void SelectQuickSlot(int number)
+void SelectQuickSlot(int number)
 {
     // First check if the slot number is valid
     if (number < 1 || number > quickSlotsList.Count)
@@ -109,6 +111,11 @@ public class EquipSystem : MonoBehaviour
                     inventoryItem.isSelected = true;
                 }
             }
+
+            //Yeni fonk
+            SetEquippedModel(selectedItem);
+
+
 
             // Changing Color - with null checks
             if (numbersHolder != null)
@@ -177,7 +184,15 @@ public class EquipSystem : MonoBehaviour
         }
     }
 }
-
+    //YENİ FONKSİYONN
+    private void SetEquippedModel(GameObject selectedItem)
+    {
+        string selectedItemName = selectedItem.name.Replace("(Clone)","");
+        //From resoursec folder
+        GameObject itemModel = Instantiate(Resources.Load<GameObject>(selectedItemName+"_Model"),
+        new Vector3(0.72f,-0.25f,0.98f),Quaternion.Euler(0,180f,90f));
+        itemModel.transform.SetParent(toolHolder.transform,false);
+    }
 
     GameObject getSelectedItem(int slotNumber)
     {
