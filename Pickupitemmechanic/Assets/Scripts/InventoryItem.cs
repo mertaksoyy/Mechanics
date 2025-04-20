@@ -32,6 +32,9 @@ public class InventoryItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     public bool isEquippable;
     private GameObject itemPendingEquipping;
     public bool isInsideQuickSlot;
+
+    //birden fazla item için değişken
+    public int amountInInventory=1;
  
 
     public bool isSelected;
