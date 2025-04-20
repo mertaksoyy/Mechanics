@@ -1041,6 +1041,7 @@ MonoBehaviour:
   selectedNumber: -1
   selectedItem: {fileID: 0}
   toolHolder: {fileID: 1200821494}
+  selectedItemModel: {fileID: 0}
 --- !u!1 &296695297
 GameObject:
   m_ObjectHideFlags: 0

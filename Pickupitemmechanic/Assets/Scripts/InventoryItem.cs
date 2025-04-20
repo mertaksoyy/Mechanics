@@ -45,7 +45,7 @@ public class InventoryItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         //itemInfoUI_itemFunctionality = itemInfoUI.transform.Find("itemFunctionality").GetComponent<Text>();
     }
 
-    void Update()
+    /*void Update()
     {
         if(isSelected)
         {
@@ -55,7 +55,7 @@ public class InventoryItem : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         {
             gameObject.GetComponent<DragDrop>().enabled = true;
         }
-    }
+    }*/
 
     // Triggered when the mouse enters into the area of the item that has this script.
     public void OnPointerEnter(PointerEventData eventData)

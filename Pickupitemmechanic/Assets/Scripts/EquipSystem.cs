@@ -20,6 +20,7 @@ public class EquipSystem : MonoBehaviour
    public GameObject selectedItem;
 
    public GameObject toolHolder;
+   public GameObject selectedItemModel;//tekrar 1 e basınca item elimizden gitmesi için veya diğer itemlar için global değişken
 
     private void Awake()
     {
@@ -165,6 +166,13 @@ void SelectQuickSlot(int number)
                 selectedItem = null; // Clear selected item
             }
 
+            //item elimizdeyken aynı sayıya basarsak elimizden gidecek
+            if(selectedItemModel != null)
+            {
+                DestroyImmediate(selectedItemModel.gameObject);
+                selectedItemModel = null;
+            }
+
             // Changing Color - with null checks
             if (numbersHolder != null)
             {
@@ -187,11 +195,17 @@ void SelectQuickSlot(int number)
     //YENİ FONKSİYONN
     private void SetEquippedModel(GameObject selectedItem)
     {
+         if(selectedItemModel != null)
+          {
+              DestroyImmediate(selectedItemModel.gameObject);
+              selectedItemModel = null;
+          }
+
         string selectedItemName = selectedItem.name.Replace("(Clone)","");
         //From resoursec folder
-        GameObject itemModel = Instantiate(Resources.Load<GameObject>(selectedItemName+"_Model"),
+        selectedItemModel = Instantiate(Resources.Load<GameObject>(selectedItemName+"_Model"),
         new Vector3(0.72f,-0.25f,0.98f),Quaternion.Euler(0,180f,90f));
-        itemModel.transform.SetParent(toolHolder.transform,false);
+        selectedItemModel.transform.SetParent(toolHolder.transform,false);
     }
 
     GameObject getSelectedItem(int slotNumber)
