@@ -87,7 +87,7 @@ public class InventorySystem : MonoBehaviour
         if(stack != null)
         {
             stack.GetComponent<InventorySlot>().itemInSlot.amountInInventory+=1;
-              stack.GetComponent<InventorySlot>().UpdateItemInSlot();
+            stack.GetComponent<InventorySlot>().UpdateItemInSlot();
 
         }
         else //stack yoksa yapıcak
